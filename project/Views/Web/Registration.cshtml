@@ -1,0 +1,142 @@
+﻿@model project.Models.User
+@{
+    ViewData["Title"] = "Registration";
+}
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true"   />
+<link rel="stylesheet" href="~/js/site.js" asp-append-version="true"   />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>register</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+    <header class="header">
+
+        <section class="flex">
+
+            <a href="/Web/Home" class="logo">yum-yum 😋</a>
+
+            <nav class="navbar">
+                <a href="/Web/Home">Home</a>
+                <a href="/Web/About">about</a>
+                <a href="/Web/Menu">menu</a>
+                <a href="/Web/Orders">orders</a>
+                <a href="/Web/Contact">contact</a>
+            </nav>
+
+            <div class="icons">
+                <a href="/Web/Search"><i class="fas fa-search"></i></a>
+                <a href="/Web/ShoppingCart"><i class="fas fa-shopping-cart"></i><span>(3)</span></a>
+                <div id="user-btn" class="fas fa-user"></div>
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </div>
+
+            <div class="profile">
+                <p class="name">Axit Gadhiya</p>
+                <div class="flex">
+                    <a href="/Web/MyProfile" class="btn">profile</a>
+                    <a href="#" class="delete-btn">logout</a>
+                </div>
+                <p class="account"><a href="/Web/Login">login</a> or <a href="/Web/Registration">register</a></p>
+            </div>
+
+        </section>
+
+    </header>
+
+<section class="form-container">
+
+        <form asp-action="Registration" method="post" asp-controller="Web">
+            <h3>register now</h3>
+            <input asp-for="Name" type="text" required maxlength="20" placeholder="enter your name" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            <input asp-for="Email" type="email" required maxlength="50" placeholder="enter your email" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            <input asp-for="Number" type="number" min="0" max="9999999999" onkeypress="if(this.value.length == 10) return false;" placeholder="enter your number" required class="box">
+            <input asp-for="Password" type="password" required maxlength="20" placeholder="enter your password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            <input asp-for="ConfirmPassword" type="password" required maxlength="20" placeholder="confirm your password" class="box" oninput="this.value = this.value.replace(/\s/g, '')">
+            <button type="submit" value="register now" class="btn" name="submit">register</button>
+            <a asp-action="Home" asp-controller="Web">back to register</a>
+            <p>already have an account? <a href="/web/Login">login now</a></p>
+        </form>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer">
+
+        <section class="box-container">
+
+            <div class="box">
+                <img src="~/images/email-icon.png" alt="">
+                <h3>our email</h3>
+                <a href="mailto:gadhiyaaxit@gmail.com">gadhiyaaxit@gmail.com</a>
+                <a href="mailto:agadhiya975@rku.ac.in">agadhiya975@rku.ac.in</a>
+            </div>
+
+            <div class="box">
+                <img src="~/images/clock-icon.png" alt="">
+                <h3>opening hours</h3>
+                <p>00:07am to 00:10pm </p>
+            </div>
+
+            <div class="box">
+                <img src="~/images/map-icon.png" alt="">
+                <h3>our address</h3>
+                <a href="https://www.google.com/maps">Rajkot, india - 360003</a>
+            </div>
+
+            <div class="box">
+                <img src="~/images/phone-icon.png" alt="">
+                <h3>our number</h3>
+                <a href="tel:1234567890">+123-456-7890</a>
+                <a href="tel:1112223333">+111-222-3333</a>
+            </div>
+
+        </section>
+
+        <div class="credit">&copy; copyright 2024 by <span>Mr.Axit Gadhiya</span> | all rights reserved!</div>
+
+    </footer>
+
+
+<div class="loader">
+   <img src="~/images/loader.gif" alt="">
+</div>
+
+</body>
+</html>
+

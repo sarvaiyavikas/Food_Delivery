@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true"   />
+<link rel="stylesheet" href="~/js/site.js" asp-append-version="true"   />
+
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+
+<!-- font awesome cdn link  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<header class="header">
+
+    <section class="flex">
+
+        <a href="/Web/Home" class="logo">yum-yum 😋</a>
+
+        <nav class="navbar">
+            <a href="/Web/Home">Home</a>
+            <a href="/Web/About">about</a>
+            <a href="/Web/Menu">menu</a>
+            <a href="/Web/Orders">orders</a>
+            <a href="/Web/Contact">contact</a>
+        </nav>
+
+        <div class="icons">
+            <a href="/Web/Search"><i class="fas fa-search"></i></a>
+            <a href="/Web/ShoppingCart"><i class="fas fa-shopping-cart"></i><span>(3)</span></a>
+            <div id="user-btn" class="fas fa-user"></div>
+            <div id="menu-btn" class="fas fa-bars"></div>
+        </div>
+
+        <div class="profile">
+            <p class="name">
+                @if (Context.Session.GetString("Email")==null)
+                {
+                    
+                }
+                else
+                {
+                    Context.Session.GetString("Email");
+                }
+                    </p>
+            <div class="flex">
+                <a href="/Web/MyProfile" class="btn">profile</a>
+                <a href="#" class="delete-btn">logout</a>
+            </div>
+            <p class="account"><a href="/Web/Login">login</a> or <a href="/Web/Registration">register</a></p>
+        </div>
+
+    </section>
+
+</header>
+
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
